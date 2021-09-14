@@ -2,7 +2,7 @@
 
 ## Пример с Order
 
-Для генерации кода для модели Order, запустите 
+Для генерации кода для модели ((Examples/order.yml Order)), запустите 
 
 ```bash
 swagger-codegen generate -l swift5 --model-name-suffix Result -Dmodels -i Examples/order.yml -t Templates/ -o ~/Downloads/
