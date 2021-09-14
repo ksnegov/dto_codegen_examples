@@ -1,5 +1,4 @@
-
-{{access_level}} {{#useModelClasses}}class{{/useModelClasses}}{{^useModelClasses}}struct{{/useModelClasses}} {{classname}}: Codable {
+{{#useModelClasses}}class{{/useModelClasses}}{{^useModelClasses}}struct{{/useModelClasses}} {{classname}}: Codable {
 
 {{#allVars}}
 {{#isEnum}}
@@ -11,7 +10,7 @@
     {{^required}}@SafeOptionalCodable {{/required}}{{#required}}let{{/required}}{{^required}}var{{/required}} {{name}}: CodableEnum<{{{datatypeWithEnum}}}>{{^required}}?{{/required}}{{#defaultValue}} = {{{defaultValue}}}{{/defaultValue}}
 {{/isEnum}}
 {{^isEnum}}
-    {{^required}}@SafeOptionalCodable {{/required}} {{#required}}let{{/required}}{{^required}}var{{/required}} {{name}}: {{{datatype}}}{{^required}}?{{/required}}{{#defaultValue}} = {{{defaultValue}}}{{/defaultValue}}{{#objcCompatible}}{{#vendorExtensions.x-swift-optional-scalar}}
+    {{^required}}@SafeOptionalCodable {{/required}}{{#required}}let{{/required}}{{^required}}var{{/required}} {{name}}: {{{datatype}}}{{^required}}?{{/required}}{{#defaultValue}} = {{{defaultValue}}}{{/defaultValue}}{{#objcCompatible}}{{#vendorExtensions.x-swift-optional-scalar}}
     var {{name}}Num: NSNumber? {
         get {
             return {{name}}.map({ return NSNumber(value: $0) })

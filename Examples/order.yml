@@ -1,33 +1,36 @@
-order:
-    additionalProperties: false
-    description: Заказ
-    required:
-        - order_id
-        - car_number
-    properties:
-        order_id:
-            type: integer
-        car_number:
-            type: string
-        car_park:
-            type: $ref: '#/park'
-        car_type:
-            type: string
-            enum:
-                - minivan
-                - sedan        
-    
-park:
-    additionalProperties: false
-    description: Парк
-    required:
-        - park_id
-        - name
-    properties:
-        park_id:
-            type: integer
-        name:
-            type: string
-        address:
-            type: string
+swagger: '2.0'
+definitions:
+    order:
+        additionalProperties: false
+        description: Заказ
+        required:
+            - order_id
+            - car_number
+        properties:
+            order_id:
+                type: integer
+            car_number:
+                type: string
+            car_park:
+                type: 
+                    $ref: '#/definitions/park'
+            car_type:
+                type: string
+                enum:
+                    - minivan
+                    - sedan        
+
+    park:
+        additionalProperties: false
+        description: Парк
+        required:
+            - park_id
+            - name
+        properties:
+            park_id:
+                type: integer
+            name:
+                type: string
+            address:
+                type: string
 
