@@ -1,0 +1,17 @@
+{{#models}}{{#model}}
+import Foundation
+
+{{#isArrayModel}}
+{{> modelArray}}
+{{/isArrayModel}}
+{{^isArrayModel}}
+{{#isEnum}}
+{{> modelEnum}}
+{{/isEnum}}
+{{^isEnum}}
+{{> modelObject}}
+{{/isEnum}}
+{{/isArrayModel}}
+{{/model}}
+{{/models}}
+

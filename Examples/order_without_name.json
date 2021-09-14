@@ -1,0 +1,10 @@
+{
+    "order": {
+        "order_id"": 1,
+        "car_number": "AB123C77RU",
+        "car_park": {
+            "park_id": 1
+        },
+        "car_type": "sedan"
+    }
+}
