@@ -1,0 +1,66 @@
+swagger: '2.0'
+definitions:
+    SearchResponse:
+        additionalProperties: false
+        description: Ответ поискового запроса от музыкального сервиса
+        required:
+            - result_count
+        properties:
+            result_count:
+                type: integer
+            results:
+                type: array
+                items:
+                    $ref: '#/definitions/Track'
+                        
+        
+    Track:
+        additionalProperties: false
+        description: Трек
+        required:
+            - id
+            - kind
+            - artist
+            - collection
+            - name
+        properties:
+            id:
+                type: integer
+            kind:
+                type: string
+                enum:
+                    - song
+                    - audiobook
+                    - guide
+            artist:
+                $ref: '#/definitions/Artist'
+            collection:
+                $ref: '#/definitions/Album'
+            name:
+                type: string
+                
+    Artist:
+        required:
+            - id
+            - name
+        properties:
+            id:
+                type: integer
+            name:
+                type: string
+            photo_url:
+                type: string
+                
+    Album:
+        required:
+            - id
+            - name
+        properties:
+            id:
+                type: integer
+            name:
+                type: string 
+            photo_url:
+                type: string
+            release_date:
+                type: date

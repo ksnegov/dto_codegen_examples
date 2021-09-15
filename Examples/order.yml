@@ -12,8 +12,7 @@ definitions:
             car_number:
                 type: string
             car_park:
-                type: 
-                    $ref: '#/definitions/park'
+                $ref: '#/definitions/park'
             car_type:
                 type: string
                 enum:
